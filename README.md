@@ -1,2 +1,1 @@
-# devdock
 # sentinel-tap
