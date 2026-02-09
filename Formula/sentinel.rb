@@ -6,20 +6,24 @@ class Sentinel < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/rahul-roy-glean/sentinel/releases/download/v#{version}/sentinel-aarch64-apple-darwin.tar.gz"
+      url "https://api.github.com/repos/rahul-roy-glean/sentinel/releases/assets/352969546",
+          headers: ["Authorization: token #{ENV.fetch("HOMEBREW_GITHUB_API_TOKEN")}", "Accept: application/octet-stream"]
       sha256 "b888b39a726a70b16ea04ca676d43dd545dbd633ff6afd746b21e409062a6b24"
     else
-      url "https://github.com/rahul-roy-glean/sentinel/releases/download/v#{version}/sentinel-x86_64-apple-darwin.tar.gz"
+      url "https://api.github.com/repos/rahul-roy-glean/sentinel/releases/assets/352969548",
+          headers: ["Authorization: token #{ENV.fetch("HOMEBREW_GITHUB_API_TOKEN")}", "Accept: application/octet-stream"]
       sha256 "d7c40e7f7036ec4ff2054e9ef2fbf7b3a2fb43fc0ea3732ca8a619206981f9f7"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/rahul-roy-glean/sentinel/releases/download/v#{version}/sentinel-aarch64-unknown-linux-gnu.tar.gz"
+      url "https://api.github.com/repos/rahul-roy-glean/sentinel/releases/assets/352969544",
+          headers: ["Authorization: token #{ENV.fetch("HOMEBREW_GITHUB_API_TOKEN")}", "Accept: application/octet-stream"]
       sha256 "303cb945f1f2d1b80bdbe56e8b88fb8d37d4e276bbe92d6dd89aa7b6b24037fd"
     else
-      url "https://github.com/rahul-roy-glean/sentinel/releases/download/v#{version}/sentinel-x86_64-unknown-linux-gnu.tar.gz"
+      url "https://api.github.com/repos/rahul-roy-glean/sentinel/releases/assets/352969545",
+          headers: ["Authorization: token #{ENV.fetch("HOMEBREW_GITHUB_API_TOKEN")}", "Accept: application/octet-stream"]
       sha256 "a1afc87d5aae1d28bc874c4636879a4d080389501341ab78c91bd08e1a314ae6"
     end
   end
