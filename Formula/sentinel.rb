@@ -7,20 +7,20 @@ class Sentinel < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/rahul-roy-glean/sentinel/releases/download/v0.1.0/sentinel-aarch64-apple-darwin.tar.gz"
-      sha256 "f678a0ff18385ef9959804f46d1d0153e9271bb097f463b9ac61cc4502a74142"
+      sha256 "b888b39a726a70b16ea04ca676d43dd545dbd633ff6afd746b21e409062a6b24"
     else
       url "https://github.com/rahul-roy-glean/sentinel/releases/download/v0.1.0/sentinel-x86_64-apple-darwin.tar.gz"
-      sha256 "ebf2f9cbb63b1743be76040a0fc4f09b3f28054f624e81012dfad6ddb9db0f6a"
+      sha256 "d7c40e7f7036ec4ff2054e9ef2fbf7b3a2fb43fc0ea3732ca8a619206981f9f7"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/rahul-roy-glean/sentinel/releases/download/v0.1.0/sentinel-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "5d774eece94a4faf977e2f721cdd60bd3d6d07eb2ab776b57aa7a562cb5fe1f9"
+      sha256 "303cb945f1f2d1b80bdbe56e8b88fb8d37d4e276bbe92d6dd89aa7b6b24037fd"
     else
       url "https://github.com/rahul-roy-glean/sentinel/releases/download/v0.1.0/sentinel-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "9a62759c852a46b7bc1a3a42b3ef299dbeac71b09d0f9c5a3a53dab764ae8841"
+      sha256 "a1afc87d5aae1d28bc874c4636879a4d080389501341ab78c91bd08e1a314ae6"
     end
   end
 
