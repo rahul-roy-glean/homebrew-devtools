@@ -1,25 +1,25 @@
 class Conductor < Formula
   desc "Local-first orchestration system for managing multiple Claude Code agents"
   homepage "https://github.com/rahul-roy-glean/conductor"
-  version "0.1.0"
+  version "0.1.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://api.github.com/repos/rahul-roy-glean/conductor/releases/assets/356904163",
+      url "https://api.github.com/repos/rahul-roy-glean/conductor/releases/assets/356911577",
           headers: ["Authorization: token #{ENV.fetch("HOMEBREW_GITHUB_API_TOKEN")}", "Accept: application/octet-stream"]
-      sha256 "eaf57d408e763e375130f32785b7f0eabfc85a80d833124f6b2583213ecdd605"
+      sha256 "162e74e90aa5608fb9648291207480bb41777d9057b4ffa668eda1af85c991c0"
     else
-      url "https://api.github.com/repos/rahul-roy-glean/conductor/releases/assets/356904164",
+      url "https://api.github.com/repos/rahul-roy-glean/conductor/releases/assets/356911576",
           headers: ["Authorization: token #{ENV.fetch("HOMEBREW_GITHUB_API_TOKEN")}", "Accept: application/octet-stream"]
-      sha256 "4374b5b616ed9cbbe2cca16b83458f98f35598ee1c1fe3455212013c9c644926"
+      sha256 "8e2f4e61ea7e94795b8aa3a7c48ea14e9f9419322c2b40a86ce7996ce21f1432"
     end
   end
 
   on_linux do
-    url "https://api.github.com/repos/rahul-roy-glean/conductor/releases/assets/356904165",
+    url "https://api.github.com/repos/rahul-roy-glean/conductor/releases/assets/356911578",
         headers: ["Authorization: token #{ENV.fetch("HOMEBREW_GITHUB_API_TOKEN")}", "Accept: application/octet-stream"]
-    sha256 "3989dd5f42be094864c191ef9007f9ce6e4056f9e0e7979bbc31b7fdf0a50616"
+    sha256 "7eb4f8df09321c6c79698bc9bd515e4bcb6d41f7719d739f5656327b66e8cbc6"
   end
 
   def install
