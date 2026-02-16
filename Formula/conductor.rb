@@ -24,6 +24,8 @@ class Conductor < Formula
 
   def install
     bin.install "conductor"
+    (var/"conductor").mkpath
+    (var/"log").mkpath
   end
 
   service do
