@@ -6,17 +6,20 @@ class Conductor < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/rahul-roy-glean/conductor/releases/download/v#{version}/conductor-aarch64-apple-darwin.tar.gz"
-      sha256 "PLACEHOLDER"
+      url "https://api.github.com/repos/rahul-roy-glean/conductor/releases/assets/356904163",
+          headers: ["Authorization: token #{ENV.fetch("HOMEBREW_GITHUB_API_TOKEN")}", "Accept: application/octet-stream"]
+      sha256 "eaf57d408e763e375130f32785b7f0eabfc85a80d833124f6b2583213ecdd605"
     else
-      url "https://github.com/rahul-roy-glean/conductor/releases/download/v#{version}/conductor-x86_64-apple-darwin.tar.gz"
-      sha256 "PLACEHOLDER"
+      url "https://api.github.com/repos/rahul-roy-glean/conductor/releases/assets/356904164",
+          headers: ["Authorization: token #{ENV.fetch("HOMEBREW_GITHUB_API_TOKEN")}", "Accept: application/octet-stream"]
+      sha256 "4374b5b616ed9cbbe2cca16b83458f98f35598ee1c1fe3455212013c9c644926"
     end
   end
 
   on_linux do
-    url "https://github.com/rahul-roy-glean/conductor/releases/download/v#{version}/conductor-x86_64-unknown-linux-gnu.tar.gz"
-    sha256 "PLACEHOLDER"
+    url "https://api.github.com/repos/rahul-roy-glean/conductor/releases/assets/356904165",
+        headers: ["Authorization: token #{ENV.fetch("HOMEBREW_GITHUB_API_TOKEN")}", "Accept: application/octet-stream"]
+    sha256 "3989dd5f42be094864c191ef9007f9ce6e4056f9e0e7979bbc31b7fdf0a50616"
   end
 
   def install
@@ -43,6 +46,9 @@ class Conductor < Formula
 
       Requires Claude Code (claude CLI) to be installed:
         npm install -g @anthropic-ai/claude-code
+
+      For private repo access, set:
+        export HOMEBREW_GITHUB_API_TOKEN=$(gh auth token)
     EOS
   end
 
