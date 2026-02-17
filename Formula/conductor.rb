@@ -34,6 +34,8 @@ class Conductor < Formula
     log_path var/"log/conductor.log"
     error_log_path var/"log/conductor-error.log"
     working_dir var/"conductor"
+    environment_variables PATH: std_service_path_env,
+                          HOME: Dir.home
   end
 
   def caveats
