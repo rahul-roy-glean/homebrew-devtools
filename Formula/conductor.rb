@@ -1,25 +1,25 @@
 class Conductor < Formula
-  desc "Local-first orchestration system for managing multiple Claude Code agents"
+  desc "Orchestrate multiple Claude Code agents from a chat-first workspace"
   homepage "https://github.com/rahul-roy-glean/conductor"
-  version "0.1.5"
+  version "0.2.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://api.github.com/repos/rahul-roy-glean/conductor/releases/assets/357783563",
+      url "https://api.github.com/repos/rahul-roy-glean/conductor/releases/assets/358360067",
           headers: ["Authorization: token #{ENV.fetch("HOMEBREW_GITHUB_API_TOKEN")}", "Accept: application/octet-stream"]
-      sha256 "7f9f75dd09fe125c47779cf1cfa5b81ff92c5fab22ce31851148e79efe1d4310"
+      sha256 "4064dcc9a3ab2a3d6516b8701c62567ab2f84cdfdf97854d538e4b01e1dc557b"
     else
-      url "https://api.github.com/repos/rahul-roy-glean/conductor/releases/assets/357783564",
+      url "https://api.github.com/repos/rahul-roy-glean/conductor/releases/assets/358360065",
           headers: ["Authorization: token #{ENV.fetch("HOMEBREW_GITHUB_API_TOKEN")}", "Accept: application/octet-stream"]
-      sha256 "da74a68100fb8d2941b2c9a88ffb8407e2e7d8e7d71073219496f655628fcad3"
+      sha256 "1c45bcdf81ac7e92b60280fffe54ca217f610d0f5d4d74aace583b374081750f"
     end
   end
 
   on_linux do
-    url "https://api.github.com/repos/rahul-roy-glean/conductor/releases/assets/357783562",
+    url "https://api.github.com/repos/rahul-roy-glean/conductor/releases/assets/358360066",
         headers: ["Authorization: token #{ENV.fetch("HOMEBREW_GITHUB_API_TOKEN")}", "Accept: application/octet-stream"]
-    sha256 "ddd48cf89e61af4f250313381fef84a134a75aac9882f416865937c0956d571b"
+    sha256 "3d5a32dc694ea036711b6219aeee99ca69891fbd42816e8151be273a6272aa03"
   end
 
   def install
